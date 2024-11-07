@@ -1,36 +1,46 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package piezas;
 
-/**
- *
- * @author fernando
- */
 import java.awt.Color;
 import uwcse.graphics.GWindow;
-import uwcse.graphics.Oval;
 import uwcse.graphics.Rectangle;
-import uwcse.graphics.Triangle;
-
 
 public class Tablero {
     private Rectangle fondo;
-    private Rectangle celdas;
-    
-    
+    private Rectangle[][] celdas;
 
+    public Tablero(GWindow ventana) {
+        int anchoVentana = ventana.getWindowWidth();
+        int altoVentana = ventana.getWindowHeight();
+        int anchoCelda = anchoVentana / 8;
+        int altoCelda = altoVentana / 8;
 
-public  Tablero(GWindow ventana){
-    int anchoVentana = ventana.getWindowWidth();
-    int altoVentana = ventana.getWindowHeight();
-    
-   
-    
-   fondo = new Rectangle(0, 0, anchoVentana, altoVentana, Color.BLACK, true);
-    
-    fondo.addTo(ventana);
-}
+        // Dibuja el fondo del tablero
+        fondo = new Rectangle(0, 0, anchoVentana, altoVentana, Color.BLACK, true);
+        fondo.addTo(ventana);
 
+        // Crear el tablero con celdas alternas
+        celdas = new Rectangle[8][8];
+        
+        for (int fila = 0; fila < 8; fila++) {
+            for (int col = 0; col < 8; col++) {
+                // Determina el color alterno
+                Color colorCelda = (fila + col) % 2 == 0 ? Color.WHITE : Color.BLACK;
+                
+                // Crear la celda en la posición correspondiente
+                celdas[fila][col] = new Rectangle(
+                    col * anchoCelda, // posición x
+                    fila * altoCelda, // posición y
+                    anchoCelda,       // ancho de la celda
+                    altoCelda,        // alto de la celda
+                    colorCelda,       // color
+                    true              // relleno
+                );
+                celdas[fila][col].addTo(ventana);
+            }
+        }
+    }
 }

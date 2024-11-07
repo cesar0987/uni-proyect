@@ -23,7 +23,7 @@ public class JavaApplication1 {
         // TODO code application logic here
         
        //Se crea la ventana y se le pasa las dimensiones por parametro
-        GWindow ventana = new GWindow(1024, 700);
+        GWindow ventana = new GWindow(1024, 1000);
         
     Tablero nuevoTablero = new Tablero(ventana);
     }
