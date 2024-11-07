@@ -8,6 +8,12 @@ package javaapplication1;
  *
  * @author fernando
  */
+import piezas.*;
+import java.awt.Color;
+import java.io.IOException;
+import uwcse.graphics.GWindow;
+import uwcse.graphics.Rectangle;
+
 public class JavaApplication1 {
 
     /**
@@ -15,6 +21,11 @@ public class JavaApplication1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+       //Se crea la ventana y se le pasa las dimensiones por parametro
+        GWindow ventana = new GWindow(1024, 700);
+        
+    Tablero nuevoTablero = new Tablero(ventana);
     }
     
 }
