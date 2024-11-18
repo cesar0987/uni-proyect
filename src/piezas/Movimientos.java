@@ -6,8 +6,8 @@ package piezas;
 
 /**
  *
- * @author fernando
+ * @author tilleria
  */
-public class Personaje {
+public class Movimientos {
     
 }

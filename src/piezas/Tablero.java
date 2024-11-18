@@ -8,19 +8,21 @@ import java.awt.Color;
 import uwcse.graphics.GWindow;
 import uwcse.graphics.Rectangle;
 
+
 public class Tablero {
-    private Rectangle fondo;
-    private Rectangle[][] celdas;
+    private final Rectangle fondo;
+    private final Rectangle[][] celdas;
 
     public Tablero(GWindow ventana) {
-        int anchoVentana = ventana.getWindowWidth();
-        int altoVentana = ventana.getWindowHeight();
-        int anchoCelda = anchoVentana / 8;
-        int altoCelda = altoVentana / 8;
+        int anchoVentana = 850;
+        int altoVentana = 850;
+        int anchoCelda =800 / 8;
+        int altoCelda = 800 / 8;
 
         // Dibuja el fondo del tablero
         fondo = new Rectangle(0, 0, anchoVentana, altoVentana, Color.BLACK, true);
         fondo.addTo(ventana);
+        
 
         // Crear el tablero con celdas alternas
         celdas = new Rectangle[8][8];
