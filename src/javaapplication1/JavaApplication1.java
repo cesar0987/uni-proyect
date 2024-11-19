@@ -8,7 +8,7 @@ package javaapplication1;
  *
  * @author fernando
  */
-import piezas.*;
+import ajedrez.*;
 import java.awt.Color;
 import java.io.IOException;
 import uwcse.graphics.GWindow;
@@ -20,12 +20,12 @@ public class JavaApplication1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         
        //Se crea la ventana y se le pasa las dimensiones por parametro
         GWindow ventana = new GWindow(1024, 1000);
         
-    Tablero nuevoTablero = new Tablero(ventana);
+
+        //Partida de Magnus Carlsen vs Kasparov
+        Partida partida = new Partida(ventana);
     }
-    
 }
