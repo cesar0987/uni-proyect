@@ -55,4 +55,8 @@ public class Imagenes {
     public void mover(int dx, int dy) {
         imagen.moveBy(dx, dy);
     }
+
+    public void eliminarImagen(GWindow ventana) {
+        ventana.remove(this.imagen);
+    }
 }
